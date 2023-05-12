@@ -140,5 +140,5 @@ async function request(name) {
 	}
 }
 
-export { sendCode, getInfo, patch, validMailSend, request, requestObj };
+export { getInfo, patch, validMailSend, request, requestObj };
 
