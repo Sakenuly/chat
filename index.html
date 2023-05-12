@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zxx" class="_active-popup-authorization" >
+	<!-- _active-popup-authorization -->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compa 'tible" content="IE=edge">
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>chat</title>
+</head>
+
+<body>
+	<template id="template">
+		<!-- <li class="chat__message chat__message_outgoing"> -->
+		<!-- <li class="chat__message">
+			<p class="chat__text"></p> <span class="chat__time-messages">18:45</span> -->
+		</li>
+	</template>
+	
+	<div class="wrapper">
+		<header class="header"></header>
+		<main class="page">
+			<div class="page__main main-page">
+				<div class="main-page__container">
+					<div class="chat">
+						<div class="chat__top">
+							<div class="chat__date"> KEK TIME </div>
+							<button type="button" class="chat__settings main-button">Настройки</button>
+							<button type="button" class="chat__exit main-button">Выйти</button>
+						</div>
+						<div class="chat__body">
+							<ul class="chat__list-messages">
+								
+								<!-- <li class="chat__message chat__message_outgoing ">
+									<p class="chat__text">Я: Добрый день!</p> <span class="chat__time-messages">18:45</span>
+								</li>
+								<li class="chat__message ">
+									<p class="chat__text chat__text_outgoing">Собеседник: Добрый день!</p> <span
+										class="chat__time-messages">18:45</span>
+								</li> -->
+								<!-- <li class="chat__message chat__message_outgoing ">
+									<p class="chat__text">Я: Добрый день!</p> <span class="chat__time-messages">18:45</span>
+								</li> -->
+							</ul>
+						</div>
+						<form action="#" class="chat__bottom">
+							<button type="button" class="button-up">&#9660;</button>
+							<input autocomplete="on" type="text" name="mess" placeholder="сообщение.."
+								class="chat__input">
+							<button type="submit" class="chat__send-message main-button">-></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+	</div>
+	<div id="popup-settings" class="popup popup_settings">
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_settings">
+				<div class="popup__top popup__top_low-margin">
+					<div class="popup__name">Настройки</div>
+					<button id="close-settings" type="button" class="popup__close">x</button>
+				</div>
+				<form action="#" class="popup__form form">
+					<label for="user-name" class="form__field-name">Имя в чате</label>
+					<div class="form__wrapper-input">
+						<input id="user-name" autocomplete="off" type="text" name="user-name" class="form__input">
+						<button type="submit" class="form__send-name main-button">-></button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup_authorization">
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_authorization">
+				<div class="popup__top popup__top_low-margin">
+					<div class="popup__name">Авторизация</div>
+				</div>
+				<form action="#" class="popup__form form">
+					<label for="mail" class="form__field-name">Почта:</label>
+					<input id="mail" autocomplete="on" type="email" name="user-name" class="form__input">
+					<div class="form__wrap-buttons">
+						<button type="submit" class="form__button-get main-button">Получить код</button>
+						<a href="#" class="form__button-enter main-button">Ввести код</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="popup popup_confirmation">
+		<div class="popup__wrapper">
+			<div class="popup__body popup__body_confirmation">
+				<div class="popup__top popup__top_low-margin">
+					<div class="popup__name">Подтверждение</div>
+					<button id="close-confirmation" type="button" class="popup__close">x</button>
+				</div>
+				<form action="#" class="popup__form form">
+					<label for="code" class="form__field-name">Код:</label>
+					<input id="code" autocomplete="on" type="text" name="user-name" class="form__input">
+					<button type="submit" class="form__button-entry main-button">Войти</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<script type="module" src="./main.js"></script>
+</body>
+
+
+</html>
+
+</html>
