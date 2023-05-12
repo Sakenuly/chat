@@ -1,5 +1,5 @@
 import {BUTTONS, CLOSE_BUTTONS, INPUTS, CHAT_ITEMS} from './const.js';
-import Cookies from 'js-cookie';
+import Cookies from 'https://cdn.skypack.dev/js-cookie@3.0.5';
 import {request} from './fetch.js';
 import {openSocket, socket} from './socket.js';
 function authCheck() {

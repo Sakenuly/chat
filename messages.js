@@ -1,12 +1,12 @@
-import {INPUTS, CHAT_ITEMS, BUTTONS} from './const.js';
-import {request} from './fetch.js';
-import {socket} from './socket.js';
-import {newMessageArray} from './socket.js';
-import Cookies from 'js-cookie';
+import { INPUTS, CHAT_ITEMS, BUTTONS } from './const.js';
+import { request } from './fetch.js';
+import { socket } from './socket.js';
+import { newMessageArray } from './socket.js';
+import Cookies from 'https://cdn.skypack.dev/js-cookie@3.0.5';
 
 function sendMessageSocket(e) {
 	e.preventDefault();
-	socket.send(JSON.stringify({text: INPUTS.message.value}));
+	socket.send(JSON.stringify({ text: INPUTS.message.value }));
 	CHAT_ITEMS.messageContainer.scrollTop += 1e9;
 }
 
@@ -131,4 +131,4 @@ function checkScroll() {
 
 CHAT_ITEMS.messageContainer.addEventListener('scroll', checkScroll);
 
-export {renderMessages};
+export { renderMessages };

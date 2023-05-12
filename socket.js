@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie';
+import Cookies from 'https://cdn.skypack.dev/js-cookie@3.0.5';
 import {renderMessages} from './messages.js';
 import {CHAT_ITEMS} from './const.js';
 let socket;

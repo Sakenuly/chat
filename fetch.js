@@ -1,9 +1,7 @@
-import { INPUTS } from './const.js';
-import { openSocket } from './socket.js';
-import { socket } from './socket.js';
-import Cookies from 'js-cookie';
-
-
+import {INPUTS} from './const.js';
+import {openSocket} from './socket.js';
+import {socket} from './socket.js';
+import Cookies from 'https://cdn.skypack.dev/js-cookie@3.0.5';
 
 function validMailSend(e) {
 	e.preventDefault();
@@ -27,20 +25,21 @@ async function getInfo() {
 			} else {
 				alert('Авторизация прошла успешно.');
 			}
+
 			openSocket();
 			return data;
 		});
-};
+}
 
 async function patch() {
 	request('changeName')
 		.then(data => {
 			socket.close();
-			alert('Вы сменили имя на ' + data.name)
-		})
+			alert('Вы сменили имя на ' + data.name);
+		});
 }
 
-//Переделать на обычную функцию и повторяющиеся объекты ссылать друг на друга с помощью this или еще как то, можно попробовать с помощью методов объектов.
+// Переделать на обычную функцию и повторяющиеся объекты ссылать друг на друга с помощью this или еще как то, можно попробовать с помощью методов объектов.
 // const requestObj = () => ( {
 // 	url: {
 // 		auth: 'https://edu.strada.one/api/user/me',
@@ -102,7 +101,7 @@ function requestObj() {
 				headers: {
 					'Content-Type': 'application/json;charset=utf-8',
 				},
-				body: JSON.stringify({ email: INPUTS.email.value }),
+				body: JSON.stringify({email: INPUTS.email.value}),
 			},
 			changeName: {
 				method: 'PATCH',
@@ -110,7 +109,7 @@ function requestObj() {
 					'Content-Type': 'application/json;charset=utf-8',
 					Authorization: `Bearer ${Cookies.get('userToken')}`,
 				},
-				body: JSON.stringify({ name: INPUTS.userName.value }),
+				body: JSON.stringify({name: INPUTS.userName.value}),
 			},
 			history: {
 				method: 'GET',
@@ -120,13 +119,12 @@ function requestObj() {
 				},
 			},
 		},
-	}
-};
-
+	};
+}
 
 async function request(name) {
-	const url = requestObj().url[name]
-	const requestType = requestObj().type[name]
+	const url = requestObj().url[name];
+	const requestType = requestObj().type[name];
 	try {
 		const response = await fetch(url, requestType);
 		const result = await response.json();
@@ -134,11 +132,12 @@ async function request(name) {
 		if (response.status < 200 || response.status > 299) {
 			throw (response.message);
 		}
+
 		return result;
 	} catch (error) {
 		alert(error);
 	}
 }
 
-export { getInfo, patch, validMailSend, request, requestObj };
+export {getInfo, patch, validMailSend, request, requestObj};
 
