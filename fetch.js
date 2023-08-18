@@ -38,48 +38,6 @@ async function patch() {
 			alert('Вы сменили имя на ' + data.name);
 		});
 }
-
-// Переделать на обычную функцию и повторяющиеся объекты ссылать друг на друга с помощью this или еще как то, можно попробовать с помощью методов объектов.
-// const requestObj = () => ( {
-// 	url: {
-// 		auth: 'https://edu.strada.one/api/user/me',
-// 		sendToken: 'https://edu.strada.one/api/user',
-// 		changeName: 'https://edu.strada.one/api/user',
-// 		history: 'https://edu.strada.one/api/messages',
-// 	},
-// 	type: {
-// 		auth: {
-// 			method: 'GET',
-// 			headers: {
-// 				'Content-Type': 'application/json;charset=utf-8',
-// 				Authorization: `Bearer ${INPUTS.confirm.value || Cookies.get('userToken')}`,
-// 			},
-// 		},
-// 		sendToken: {
-// 			method: 'POST',
-// 			headers: {
-// 				'Content-Type': 'application/json;charset=utf-8',
-// 			},
-// 			body: JSON.stringify({ email: INPUTS.email.value }),
-// 		},
-// 		changeName: {
-// 			method: 'PATCH',
-// 			headers: {
-// 				'Content-Type': 'application/json;charset=utf-8',
-// 				Authorization: `Bearer ${Cookies.get('userToken')}`,
-// 			},
-// 			body: JSON.stringify({ name: INPUTS.userName.value }),
-// 		},
-// 		history: {
-// 			method: 'GET',
-// 			headers: {
-// 				'Content-Type': 'application/json;charset=utf-8',
-// 				Authorization: `Bearer ${INPUTS.confirm.value || Cookies.get('userToken')}`,
-// 			},
-// 		},
-// 	},
-// });
-
 function requestObj() {
 	return {
 		url: {
